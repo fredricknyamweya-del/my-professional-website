@@ -210,12 +210,12 @@ a {
   max-width: 45rem;
 }
 
-.language-icons {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
+  .language-icons {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
 
 .language-card {
   display: flex;
@@ -240,6 +240,39 @@ a {
   font-weight: 700;
   color: var(--text);
 }
+
+  .language-note {
+    margin-top: 1.25rem;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  /* Hover and focus states for language cards */
+  .language-card {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .language-card:hover,
+  .language-card:focus-within {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 28px 64px rgba(15,23,42,0.12);
+    border-color: var(--primary);
+    background: var(--surface-soft);
+  }
+
+  .language-card img {
+    transition: transform 180ms ease, filter 180ms ease;
+  }
+
+  .language-card:hover img,
+  .language-card:focus-within img {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  .language-card:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--primary-soft);
+  }
 
 .hero {
   min-height: calc(100vh - 6rem);
