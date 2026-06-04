@@ -226,17 +226,27 @@ a {
 
 .hamburger {
   display: none;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 0.35rem;
-  background: var(--primary-soft);
-  border-color: var(--primary);
+  width: 48px;
+  height: 48px;
+  padding: 0.5rem;
+  background: rgba(42, 134, 255, 0.12);
+  border: 1px solid rgba(42, 134, 255, 0.25);
   color: var(--primary);
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .hamburger:hover,
 .hamburger:focus-visible {
   background: var(--primary);
   color: #ffffff;
+  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.18);
+  transform: translateY(-1px);
 }
 
 .hamburger span {
@@ -245,7 +255,19 @@ a {
   height: 2.5px;
   background: currentColor;
   border-radius: 999px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .primary-nav {
@@ -360,7 +382,7 @@ a {
 }
 
 .language-card img[alt="Tailwind CSS logo"] {
-  filter: invert(0.95) saturate(1.2) brightness(0.8) drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.2));
+  filter: none;
   background: #ffffff;
 }
 

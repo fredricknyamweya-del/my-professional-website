@@ -104,11 +104,35 @@ function handleFormSubmit(event) {
     feedbackTarget.style.color = '#d64545';
     return;
   }
-  feedbackTarget.textContent = form.id === 'contactForm'
-    ? 'Thanks! Your message is on its way.'
-    : 'Success! You’re subscribed to updates.';
-  feedbackTarget.style.color = '#159e6f';
-  form.reset();
+
+  feedbackTarget.textContent = 'Sending your message...';
+  feedbackTarget.style.color = 'var(--text)';
+
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      Accept: 'application/json',
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Unable to send message at this time.');
+        });
+      }
+      return response.json();
+    })
+    .then(() => {
+      feedbackTarget.textContent = 'Thanks! Your message is on its way.';
+      feedbackTarget.style.color = '#159e6f';
+      form.reset();
+    })
+    .catch(error => {
+      feedbackTarget.textContent = error.message || 'Unable to send message at this time.';
+      feedbackTarget.style.color = '#d64545';
+    });
 }
 
 menuToggle.addEventListener('click', toggleMenu);
