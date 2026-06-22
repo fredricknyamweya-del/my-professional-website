@@ -369,6 +369,7 @@ a {
   border-radius: 1.25rem;
   box-shadow: var(--shadow);
   text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .language-card img {
@@ -378,6 +379,7 @@ a {
   background: rgba(255,255,255,0.9);
   border-radius: 0.9rem;
   padding: 0.35rem;
+  transition: transform 180ms ease, filter 180ms ease;
 }
 
 .language-card img[alt="Tailwind CSS logo"] {
@@ -397,20 +399,12 @@ a {
   text-align: center;
 }
 
-.language-card {
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
 .language-card:hover,
 .language-card:focus-within {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 28px 64px rgba(15,23,42,0.12);
   border-color: var(--primary);
   background: var(--surface-soft);
-}
-
-.language-card img {
-  transition: transform 180ms ease, filter 180ms ease;
 }
 
 .language-card:hover img,
@@ -424,12 +418,8 @@ a {
 }
 
 @keyframes slide-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .hero {
@@ -751,7 +741,6 @@ textarea:focus {
   grid-template-columns: minmax(250px, 1.3fr) minmax(200px, 1fr);
   gap: 1.5rem;
   align-items: center;
-  background: rgba(15, 30, 58, 0.95);
   border: 1px solid rgba(42,134,255,0.2);
   border-radius: 1.5rem;
   padding: 1.75rem;
@@ -785,6 +774,8 @@ textarea:focus {
   color: var(--muted);
   line-height: 1.7;
 }
+
+/* ── Social icons block ── */
 
 .social-icons-block {
   display: flex;
@@ -822,17 +813,6 @@ textarea:focus {
   background: var(--surface-soft);
 }
 
-.social-icons a.whatsapp-link {
-  background: #25d366;
-  color: #ffffff;
-  border-color: rgba(37,211,102,0.35);
-}
-
-.social-icons a.whatsapp-link:hover,
-.social-icons a.whatsapp-link:focus-visible {
-  background: #1ebe5a;
-}
-
 .social-icons a.github-link {
   background: #181717;
   color: #ffffff;
@@ -855,30 +835,31 @@ textarea:focus {
   background: #0a58b4;
 }
 
-/* Base icon size — all icons */
+.social-icons a.email-link {
+  background: #ea4335;
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.15);
+}
+
+.social-icons a.email-link:hover,
+.social-icons a.email-link:focus-visible {
+  background: #d33426;
+}
+
+/* Base icon size */
 .social-icons svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
 }
 
-/* LinkedIn optical size correction — its SVG path has built-in padding */
+/* LinkedIn optical size correction */
 .social-icons a.linkedin-link svg {
   width: 20px;
   height: 20px;
 }
 
-.whatsapp-number {
-  margin: 0.9rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-.whatsapp-number a {
-  color: var(--text);
-  text-decoration: underline;
-}
+/* ── Footer & scroll-top ── */
 
 .site-footer {
   padding: 2rem 1.5rem;
@@ -912,6 +893,8 @@ textarea:focus {
   opacity: 1;
   transform: none;
 }
+
+/* ── Dark mode ── */
 
 .dark-mode {
   color-scheme: dark;
@@ -974,7 +957,8 @@ textarea:focus {
   color: var(--muted);
 }
 
-/* Tablet and below: 900px */
+/* ── Tablet: 900px ── */
+
 @media (max-width: 900px) {
   .section {
     padding: 3rem 1.5rem;
@@ -1028,7 +1012,8 @@ textarea:focus {
   }
 }
 
-/* Mobile: 768px and below */
+/* ── Mobile: 768px ── */
+
 @media (max-width: 768px) {
   .site-header {
     padding: 1rem 1.25rem;
@@ -1308,11 +1293,6 @@ textarea:focus {
     height: 18px;
   }
 
-  .whatsapp-number {
-    font-size: 0.9rem;
-    margin-top: 0.75rem;
-  }
-
   .site-footer {
     padding: 1.5rem 1rem;
     font-size: 0.9rem;
@@ -1323,7 +1303,8 @@ textarea:focus {
   }
 }
 
-/* Small mobile: 480px and below */
+/* ── Small mobile: 480px ── */
+
 @media (max-width: 480px) {
   .site-header {
     padding: 0.85rem 1rem;
