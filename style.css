@@ -182,7 +182,6 @@ a {
   justify-content: flex-end;
 }
 
-
 .icon-btn {
   display: inline-flex;
   align-items: center;
@@ -341,11 +340,11 @@ a {
   max-width: 45rem;
 }
 
-  .language-icons {
-    overflow: hidden;
-    margin: 1.5rem auto 0;
-    padding: 0.5rem 0;
-  }
+.language-icons {
+  overflow: hidden;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 0;
+}
 
 .language-track {
   display: flex;
@@ -398,32 +397,31 @@ a {
   text-align: center;
 }
 
-  /* Hover and focus states for language cards */
-  .language-card {
-    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
-  }
+.language-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
 
-  .language-card:hover,
-  .language-card:focus-within {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 28px 64px rgba(15,23,42,0.12);
-    border-color: var(--primary);
-    background: var(--surface-soft);
-  }
+.language-card:hover,
+.language-card:focus-within {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 28px 64px rgba(15,23,42,0.12);
+  border-color: var(--primary);
+  background: var(--surface-soft);
+}
 
-  .language-card img {
-    transition: transform 180ms ease, filter 180ms ease;
-  }
+.language-card img {
+  transition: transform 180ms ease, filter 180ms ease;
+}
 
-  .language-card:hover img,
-  .language-card:focus-within img {
-    transform: translateY(-3px) scale(1.05);
-  }
+.language-card:hover img,
+.language-card:focus-within img {
+  transform: translateY(-3px) scale(1.05);
+}
 
-  .language-card:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px var(--primary-soft);
-  }
+.language-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
 
 @keyframes slide-left {
   0% {
@@ -667,54 +665,12 @@ a {
   background: var(--border);
 }
 
-
-.timeline-list {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  scroll-snap-type: x mandatory;
-}
-
-.timeline-item {
-  min-width: 300px;
-  flex: 0 0 auto;
-  padding: 1.5rem;
-  scroll-snap-align: center;
-  position: relative;
-  background: linear-gradient(180deg, var(--surface-soft) 0%, var(--surface) 100%);
-  border: 1px solid var(--border);
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -1rem;
-  top: 1.5rem;
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  background: var(--primary);
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  left: -0.625rem;
-  top: 2.5rem;
-  width: 2px;
-  height: calc(100% - 2.5rem);
-  background: var(--border);
-}
-
 .timeline-date {
   display: inline-flex;
   margin-bottom: 1rem;
   color: var(--primary);
   font-weight: 700;
 }
-
-.professional-
 
 .contact-grid {
   grid-template-columns: minmax(300px, 1fr) minmax(300px, 1.1fr);
@@ -888,17 +844,6 @@ textarea:focus {
   background: #2f3337;
 }
 
-.social-icons a.instagram-link {
-  background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  color: #ffffff;
-  border-color: rgba(255,255,255,0.2);
-}
-
-.social-icons a.instagram-link:hover,
-.social-icons a.instagram-link:focus-visible {
-  filter: brightness(0.95);
-}
-
 .social-icons a.linkedin-link {
   background: #0a66c2;
   color: #ffffff;
@@ -910,10 +855,17 @@ textarea:focus {
   background: #0a58b4;
 }
 
+/* Base icon size — all icons */
 .social-icons svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
+}
+
+/* LinkedIn optical size correction — its SVG path has built-in padding */
+.social-icons a.linkedin-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .whatsapp-number {
@@ -949,7 +901,6 @@ textarea:focus {
   color: var(--text);
   box-shadow: var(--shadow);
 }
-
 
 [data-visible='false'] {
   opacity: 0;
@@ -1352,6 +1303,11 @@ textarea:focus {
     height: 16px;
   }
 
+  .social-icons a.linkedin-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .whatsapp-number {
     font-size: 0.9rem;
     margin-top: 0.75rem;
@@ -1511,6 +1467,16 @@ textarea:focus {
     height: 32px;
   }
 
+  .social-icons svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .social-icons a.linkedin-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .site-footer {
     padding: 1.25rem 0.85rem;
     font-size: 0.85rem;
@@ -1523,4 +1489,3 @@ textarea:focus {
     bottom: 1rem;
   }
 }
-
