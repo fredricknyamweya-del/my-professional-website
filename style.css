@@ -362,19 +362,21 @@ a {
 }
 
 .language-icons {
-  overflow: hidden;
   margin: 1.5rem auto 0;
   padding: 0.5rem 0;
 }
 
 .language-track {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  animation: slide-left 22s linear infinite;
 }
 
 .language-track-group {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -418,6 +420,17 @@ a {
   color: var(--muted);
   font-weight: 700;
   text-align: center;
+}
+
+.portfolio-summary {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.portfolio-summary p {
+  margin: 0 auto;
+  max-width: 720px;
+  color: var(--muted);
 }
 
 .language-card:hover,
