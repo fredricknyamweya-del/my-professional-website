@@ -589,6 +589,11 @@ a {
   transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
 }
 
+.stat-card {
+  min-width: fit-content;
+  padding: 1rem 1.25rem;
+}
+
 .hero-card:hover,
 .hero-card:focus-within {
   transform: translateY(-8px);
@@ -604,6 +609,11 @@ a {
 .hero-card strong {
   font-size: 1.7rem;
   color: var(--hero-card-text);
+}
+
+.stat-value {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  white-space: nowrap;
 }
 
 .hero-panel > * {
@@ -1140,6 +1150,11 @@ form label {
     min-width: 200px;
   }
 
+  .stat-card {
+    min-width: 0;
+    width: 100%;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1274,6 +1289,11 @@ form label {
     flex: 1 1 100%;
     padding: 1.25rem;
     min-width: unset;
+  }
+
+  .stat-card {
+    min-width: 0;
+    width: 100%;
   }
 
   .hero-card p {
