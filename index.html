@@ -267,12 +267,12 @@
         <div class="forms-panel">
           <form id="contactForm" action="https://formspree.io/f/xgobejrb" method="POST" novalidate>
             <label for="nameInput">Name</label>
-            <input id="nameInput" type="text" name="name" placeholder="Your name" required>
+            <input class="form-input" id="nameInput" type="text" name="name" placeholder="Your name" required>
             <label for="emailInput">Email</label>
-            <input id="emailInput" type="email" name="email" placeholder="Your email" required>
+            <input class="form-input" id="emailInput" type="email" name="email" placeholder="Your email" required>
             <label for="messageInput">Message</label>
-            <textarea id="messageInput" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
-            <button class="button primary" type="submit">Send Message</button>
+            <textarea class="form-input form-textarea" id="messageInput" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+            <button class="button primary contact-submit" type="submit">Send Message</button>
             <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
           </form>
         </div>

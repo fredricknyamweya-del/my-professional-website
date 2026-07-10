@@ -22,6 +22,12 @@
   --hero-card-text: #102a43;
   --hero-card-muted: #52606d;
   --hero-card-border: rgba(16,42,67,0.12);
+  --form-input-bg: #ffffff;
+  --form-input-border: rgba(16,42,67,0.16);
+  --form-input-text: #102a43;
+  --form-input-placeholder: #7b8794;
+  --form-input-focus-border: #2a86ff;
+  --form-input-focus-shadow: rgba(42,134,255,0.18);
 }
 
 * {
@@ -828,20 +834,35 @@ form label {
   color: var(--text);
 }
 
-input,
-textarea {
+.form-input {
   width: 100%;
   padding: 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--form-input-border);
   border-radius: 1rem;
-  background: var(--surface);
-  color: var(--text);
+  background: var(--form-input-bg);
+  color: var(--form-input-text);
+  box-shadow: inset 0 1px 2px rgba(15,23,42,0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-input:focus,
-textarea:focus {
-  outline: 2px solid rgba(42,134,255,0.2);
-  outline-offset: 2px;
+.form-input::placeholder {
+  color: var(--form-input-placeholder);
+}
+
+.form-textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--form-input-focus-border);
+  box-shadow: 0 0 0 4px var(--form-input-focus-shadow);
+}
+
+.contact-submit {
+  align-self: flex-start;
+  min-width: 180px;
 }
 
 .form-feedback {
@@ -1039,6 +1060,12 @@ textarea:focus {
   --hero-card-text: #f8fafc;
   --hero-card-muted: #c8d4e6;
   --hero-card-border: rgba(92,200,255,0.2);
+  --form-input-bg: #10263b;
+  --form-input-border: rgba(92,200,255,0.28);
+  --form-input-text: #f8fafc;
+  --form-input-placeholder: #8ba0b8;
+  --form-input-focus-border: #5cc8ff;
+  --form-input-focus-shadow: rgba(92,200,255,0.22);
   background: radial-gradient(circle at top left, rgba(92,200,255,0.12), transparent 35%),
     radial-gradient(circle at bottom right, rgba(124,219,182,0.08), transparent 30%),
     var(--bg);
@@ -1366,8 +1393,7 @@ textarea:focus {
     font-size: 0.95rem;
   }
 
-  input,
-  textarea {
+  .form-input {
     padding: 0.85rem;
     font-size: 1rem;
     border-radius: 0.85rem;
