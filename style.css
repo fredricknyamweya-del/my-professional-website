@@ -15,6 +15,13 @@
   --accent: #00bfa6;
   --border: rgba(16,42,67,0.12);
   --shadow: 0 20px 40px rgba(15,23,42,0.08);
+  --hero-pill-bg: rgba(255,255,255,0.9);
+  --hero-pill-text: #102a43;
+  --hero-pill-border: rgba(16,42,67,0.12);
+  --hero-card-bg: #ffffff;
+  --hero-card-text: #102a43;
+  --hero-card-muted: #52606d;
+  --hero-card-border: rgba(16,42,67,0.12);
 }
 
 * {
@@ -554,9 +561,9 @@ a {
 .hero-tags span {
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.75);
-  border: 1px solid rgba(16,42,67,0.08);
-  color: var(--text);
+  background: var(--hero-pill-bg);
+  border: 1px solid var(--hero-pill-border);
+  color: var(--hero-pill-text);
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -568,8 +575,8 @@ a {
 }
 
 .hero-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--hero-card-bg);
+  border: 1px solid var(--hero-card-border);
   padding: 1.25rem;
   border-radius: 1.25rem;
   box-shadow: var(--shadow);
@@ -585,12 +592,12 @@ a {
 
 .hero-card p {
   margin: 0 0 0.5rem;
-  color: var(--muted);
+  color: var(--hero-card-muted);
 }
 
 .hero-card strong {
   font-size: 1.7rem;
-  color: var(--text);
+  color: var(--hero-card-text);
 }
 
 .hero-panel > * {
@@ -1025,6 +1032,13 @@ textarea:focus {
   --primary-soft: rgba(92,200,255,0.15);
   --accent: #7cdbb6;
   --border: rgba(255,255,255,0.08);
+  --hero-pill-bg: rgba(10,24,39,0.95);
+  --hero-pill-text: #f8fafc;
+  --hero-pill-border: rgba(92,200,255,0.28);
+  --hero-card-bg: #11253d;
+  --hero-card-text: #f8fafc;
+  --hero-card-muted: #c8d4e6;
+  --hero-card-border: rgba(92,200,255,0.2);
   background: radial-gradient(circle at top left, rgba(92,200,255,0.12), transparent 35%),
     radial-gradient(circle at bottom right, rgba(124,219,182,0.08), transparent 30%),
     var(--bg);
