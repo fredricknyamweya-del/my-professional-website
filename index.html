@@ -19,14 +19,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-layer" aria-hidden="true">
-    <div class="parallax-item depth-1" data-depth="0.02"></div>
-    <div class="parallax-item depth-2" data-depth="0.035"></div>
-    <div class="parallax-item depth-3" data-depth="0.05"></div>
-    <div class="parallax-item depth-4" data-depth="0.08"></div>
-    <div class="parallax-item depth-5" data-depth="0.12"></div>
-    <div class="cursor-glow"></div>
-  </div>
+  <div class="page-layer" aria-hidden="true"></div>
   <header class="site-header" id="siteHeader">
     <div class="brand">
       <a href="#home" class="logo">Fredrick <span>Nyamweya</span></a>
@@ -62,6 +55,7 @@
   <main>
     <section class="hero section" id="home">
       <div class="hero-panel">
+        <p class="section-eyebrow">// Introduction</p>
         <p class="eyebrow reveal">Hello, I'm Fredrick.</p>
         <h1 class="reveal">The Digital Craftsperson</h1>
         <p class="hero-hook reveal">I create polished digital experiences that feel clear, fast, and human.</p>
@@ -108,6 +102,7 @@
     <section class="section about-section" id="about">
       <div class="section-header">
         <div>
+          <p class="section-eyebrow">// About</p>
           <h2 class="reveal">About Me</h2>
           
         <p>I'm a developer who believes great software solves real problems-not just technically, but by making people's workflows smoother and their days easier. <br>Coming from a background where I've worn many hats, I bring a practical mindset to coding: every feature should earn its place, every interaction should feel intentional.<br>I'm most energized when collaborating with teams, learning emerging technologies, and shipping products that genuinely impact users.<br>Whether debugging a tricky API call or refining a component's UX, I approach each challenge as a chance to strengthen both my craft and the product.</p>
@@ -146,9 +141,11 @@
 
     <section class="section portfolio-section" id="portfolio">
       <div class="section-header reveal reveal--scale">
+        <p class="section-eyebrow">// Projects</p>
         <h2 class="reveal">Portfolio</h2>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Group project</p>
         <p>1. <strong>FleetPesa</strong><br>Fleet remittance and vehicle management platform for owners of 10–15 boda bodas and matatus, with an owner dashboard, driver remittance entry, maintenance alerts, and shortfall tracking. My role in the seven-person group project was QA and project lead (git workflow, code review, and endpoint testing), and I contributed the login/registration revamp and shortfall detail workflow.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>React</span>
@@ -160,6 +157,7 @@
         <a class="project-link project-repo-placeholder" href="https://github.com/fredricknyamweya-del/Fleet-Pesa" target="_blank" rel="noopener noreferrer" aria-label="View FleetPesa on GitHub (opens in a new tab)">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Client project</p>
         <p>2. <strong>Kenchi-Breeders website</strong><br>Catalogue site for a kienyeji chicken business in Kitale, with two catalogues, egg trays, pickup locations, and a WhatsApp chat button. Built from a Figma design.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Next.js (JavaScript)</span>
@@ -170,14 +168,17 @@
         <a class="project-link project-repo-placeholder" href="https://github.com/fredricknyamweya-del/kenchi-breeders" target="_blank" rel="noopener noreferrer" aria-label="View Kenchi-Breeders on GitHub (opens in a new tab)">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Command-line project</p>
         <p>3. <strong>TaskMate CLI – Project Management Tool</strong><br>Built a Python-based command-line project management app that helps users manage projects, tasks, and assignments with JSON persistence and clear object-oriented structure.</p>
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the TaskMate CLI GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">API project</p>
         <p>4. <strong>Inventory Management API with SQLite Integration</strong><br>Developed a Flask-based REST API for inventory management with CRUD endpoints, external barcode lookup via OpenFoodFacts, and persistent SQLite storage for reliable data handling.</p>
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the Inventory Management API GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Summative lab</p>
         <p>5. <strong>Expense Tracker API</strong><br>JWT-authenticated REST API with signup, login, and full expense CRUD with pagination. Users can access only their own data.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Flask</span>
@@ -189,6 +190,7 @@
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the Expense Tracker API GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Summative lab</p>
         <p>6. <strong>Workout Tracker API</strong><br>REST API for tracking workouts. Built with Flask, SQLAlchemy, and Marshmallow.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Flask</span>
@@ -198,6 +200,7 @@
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the Workout Tracker API GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
+        <p class="project-status">Group project</p>
         <p>7. <strong>Logistics Shipment Tracking Schema</strong><br>Group project redesigning an 11-table relational schema including Payments, Shipments, Packages, and a many-to-many join table. My contribution was proposing the Payments table and working out the Shipment-to-Package relationship.</p>
         <div class="project-tags" aria-label="Technologies and methods used">
           <span>Relational Database Design</span>
@@ -262,6 +265,7 @@
     <section class="section timeline-section" id="timeline">
       <div class="section-header reveal">
         <div>
+          <p class="section-eyebrow">// Experience</p>
           <h2 class="reveal">Professional Journey</h2>
           <h3 class="timeline-role reveal reveal--left">1. Junior Front-End Developer (Freelance)</h3>
           <p class="timeline-period reveal reveal--right">Jan 2026 - Present</p>
@@ -277,6 +281,7 @@
     <section class="section contact-section" id="contact">
       <div class="contact-shell">
         <div class="contact-intro reveal">
+          <p class="section-eyebrow">// Contact</p>
           <p class="eyebrow">Let's Connect</p>
           <h2 class="reveal">Ready to build something memorable?</h2>
           <p>Share a few details about your idea and I'll get back to you with a thoughtful response.</p>
@@ -299,7 +304,8 @@
     <section class="section certification-section" id="certifications">
       <div class="section-header">
         <div>
-          <h2 class="reveal">Certification</h2>
+          <p class="section-eyebrow">// Certifications</p>
+          <h2 class="reveal">Credentials</h2>
           <p class="reveal">Achievements and credentials</p>
         </div>
       </div>

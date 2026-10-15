@@ -227,50 +227,6 @@ if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
 
 document.documentElement.classList.add('js-enabled');
 
-const parallaxItems = document.querySelectorAll('.parallax-item');
-const cursorGlow = document.querySelector('.cursor-glow');
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let targetX = mouseX;
-let targetY = mouseY;
-let animationFrameId;
-
-function animateParallax() {
-  mouseX += (targetX - mouseX) * 0.09;
-  mouseY += (targetY - mouseY) * 0.09;
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
-
-  parallaxItems.forEach(item => {
-    const depth = parseFloat(item.dataset.depth) || 0.03;
-    const offsetX = (mouseX - centerX) * depth;
-    const offsetY = (mouseY - centerY) * depth;
-    item.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
-  });
-
-  if (cursorGlow) {
-    cursorGlow.style.left = `${mouseX}px`;
-    cursorGlow.style.top = `${mouseY}px`;
-  }
-
-  animationFrameId = requestAnimationFrame(animateParallax);
-}
-
-document.addEventListener('pointermove', event => {
-  if (prefersReducedMotion.matches) return;
-  targetX = event.clientX;
-  targetY = event.clientY;
-  if (!animationFrameId) {
-    animationFrameId = requestAnimationFrame(animateParallax);
-  }
-});
-
-document.addEventListener('pointerleave', () => {
-  if (prefersReducedMotion.matches) return;
-  targetX = window.innerWidth / 2;
-  targetY = window.innerHeight / 2;
-});
-
 function initialize() {
   initializeTheme();
   updateActiveLink();
