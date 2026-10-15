@@ -4064,8 +4064,50 @@ main > .section.visible {
   box-shadow: var(--focus-ring);
 }
 
+.project-repo-placeholder {
+  border-style: dashed;
+  background: transparent;
+  color: var(--text);
+}
+
+.project-repo-placeholder:hover,
+.project-repo-placeholder:focus-visible {
+  background: var(--primary-soft);
+  color: var(--text);
+}
+
 .dark-mode .project-link {
   color: #11152c;
+}
+
+.dark-mode .project-repo-placeholder {
+  color: var(--text);
+}
+
+.skill-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.skill-heading > span:first-child {
+  display: block;
+  min-width: 0;
+  color: var(--text);
+}
+
+.skill-heading .skill-percentage {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.skill-item .skill-bar > span {
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
