@@ -167,7 +167,7 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
 document.querySelectorAll('.section, .timeline-item, .hero-card').forEach(element => {
   revealObserver.observe(element);
