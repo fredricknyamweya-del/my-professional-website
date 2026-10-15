@@ -3897,18 +3897,6 @@ button:focus-visible {
   box-shadow: var(--focus-ring);
 }
 
-/* Scroll reveal uses the existing IntersectionObserver in script.js. */
-main > .section:not(.hero) {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 280ms ease, transform 280ms ease;
-}
-
-main > .section.visible {
-  opacity: 1;
-  transform: none;
-}
-
 @media (max-width: 900px) {
   .site-header {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -4112,6 +4100,63 @@ main > .section.visible {
 
 @media (prefers-reduced-motion: reduce) {
   .project-link {
+    transition: none;
+  }
+}
+
+/* Reveal motion is enabled only after JavaScript has initialized. */
+.hero-panel > *,
+.hero-highlights {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.js-enabled .reveal {
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 30px;
+  scale: 1;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear var(--delay, 0ms);
+  transition-delay: var(--delay, 0ms);
+}
+
+.js-enabled .reveal--left {
+  translate: -30px 0;
+}
+
+.js-enabled .reveal--right {
+  translate: 30px 0;
+}
+
+.js-enabled .reveal--scale {
+  scale: 0.96;
+}
+
+.js-enabled .reveal.is-visible {
+  opacity: 1;
+  visibility: visible;
+  translate: 0 0;
+  scale: 1;
+}
+
+.js-enabled .reveal.is-visible {
+  transition-delay: var(--delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .reveal,
+  .js-enabled .reveal--left,
+  .js-enabled .reveal--right,
+  .js-enabled .reveal--scale {
+    opacity: 1;
+    visibility: visible;
+    translate: none;
+    scale: 1;
     transition: none;
   }
 }

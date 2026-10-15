@@ -160,18 +160,64 @@ contactForm.addEventListener('submit', handleFormSubmit);
 const observerCounters = new IntersectionObserver(animateCounters, { threshold: 0.5 });
 counterElements.forEach(counter => observerCounters.observe(counter));
 
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+const revealElements = [...document.querySelectorAll('.reveal')];
+const staggerGroups = [
+  '.hero-panel > .reveal',
+  '.hero-tags > .reveal',
+  '.hero-cards > .reveal',
+  '.skills-panel > .reveal',
+  '.portfolio-section > .section-header.reveal',
+  '.language-track-group > .reveal',
+  '.timeline-section .timeline-role, .timeline-section .timeline-period, .timeline-section .timeline-detail, .timeline-section .timeline-skills',
+];
+
+staggerGroups.forEach(selector => {
+  document.querySelectorAll(selector).forEach((element, index) => {
+    element.style.setProperty('--delay', `${index * 100}ms`);
+  });
+});
+
+if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+  revealElements.forEach(element => element.classList.add('is-visible'));
+} else {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+      const delay = parseFloat(element.style.getPropertyValue('--delay')) || 0;
+      element.style.willChange = 'opacity, transform';
+      element.classList.add('is-visible');
+      revealObserver.unobserve(element);
+
+      const clearWillChange = event => {
+        if (event && (event.target !== element || event.propertyName !== 'opacity')) return;
+        element.style.removeProperty('will-change');
+        element.removeEventListener('transitionend', clearWillChange);
+        window.clearTimeout(cleanupTimer);
+      };
+
+      const cleanupTimer = window.setTimeout(clearWillChange, 800 + delay);
+      element.addEventListener('transitionend', clearWillChange);
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px',
+  });
+
+  revealElements.forEach(element => {
+    const bounds = element.getBoundingClientRect();
+    const alreadyInView = bounds.bottom > 0 && bounds.top < window.innerHeight;
+    if (alreadyInView) {
+      element.classList.add('is-visible');
+      element.style.setProperty('--delay', '0ms');
+    } else {
+      revealObserver.observe(element);
     }
   });
-}, { threshold: 0.1 });
+}
 
-document.querySelectorAll('.section, .timeline-item, .hero-card').forEach(element => {
-  revealObserver.observe(element);
-});
+document.documentElement.classList.add('js-enabled');
 
 const parallaxItems = document.querySelectorAll('.parallax-item');
 const cursorGlow = document.querySelector('.cursor-glow');
