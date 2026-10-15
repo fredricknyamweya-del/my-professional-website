@@ -10,6 +10,7 @@ const counterElements = document.querySelectorAll('.counter-value');
 const sectionElements = document.querySelectorAll('main section');
 const contactForm = document.getElementById('contactForm');
 const contactFeedback = document.getElementById('contactFeedback');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function setTheme(theme) {
   if (theme === 'dark') {
@@ -151,7 +152,7 @@ document.addEventListener('scroll', () => {
 });
 
 scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
 });
 
 contactForm.addEventListener('submit', handleFormSubmit);
@@ -202,6 +203,7 @@ function animateParallax() {
 }
 
 document.addEventListener('pointermove', event => {
+  if (prefersReducedMotion.matches) return;
   targetX = event.clientX;
   targetY = event.clientY;
   if (!animationFrameId) {
@@ -210,6 +212,7 @@ document.addEventListener('pointermove', event => {
 });
 
 document.addEventListener('pointerleave', () => {
+  if (prefersReducedMotion.matches) return;
   targetX = window.innerWidth / 2;
   targetY = window.innerHeight / 2;
 });
