@@ -1578,10 +1578,6 @@ form label {
     padding: 0 0.6rem;
   }
 
-  .theme-label {
-    display: none;
-  }
-
   .section {
     padding: 2rem 0.85rem;
   }
@@ -3286,10 +3282,6 @@ form label {
     padding: 0 0.6rem;
   }
 
-  .theme-label {
-    display: none;
-  }
-
   .section {
     padding: 2rem 0.85rem;
   }
@@ -4218,4 +4210,16 @@ button:focus-visible {
   .breadcrumb {
     margin-top: 16px;
   }
+}
+
+.theme-toggle {
+  width: auto;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.theme-label {
+  display: inline;
 }
