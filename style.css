@@ -3682,6 +3682,11 @@ body > footer {
   text-align: center;
 }
 
+.certification-section > .section-header p {
+  text-align: center;
+  max-width: none;
+}
+
 .about-section > .section-header > div,
 .certification-section > .section-header > div {
   width: 100%;
