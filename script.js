@@ -32,8 +32,13 @@ function initializeTheme() {
 
 function toggleMenu() {
   const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!expanded));
-  primaryNav.classList.toggle('open');
+  setMenuOpen(!expanded);
+}
+
+function setMenuOpen(isOpen) {
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  primaryNav.classList.toggle('open', isOpen);
+  body.classList.toggle('nav-menu-open', isOpen);
 }
 
 function updateActiveLink() {
@@ -137,10 +142,7 @@ function handleFormSubmit(event) {
 }
 
 menuToggle.addEventListener('click', toggleMenu);
-navLinks.forEach(link => link.addEventListener('click', () => {
-  primaryNav.classList.remove('open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-}));
+navLinks.forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
 
 themeToggle.addEventListener('click', () => {
   setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark');
