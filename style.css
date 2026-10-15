@@ -3673,6 +3673,15 @@ body > footer {
   margin-bottom: 1.25rem;
 }
 
+.certification-section > .section-header {
+  text-align: center;
+  justify-items: center;
+}
+
+.certification-section > .section-header > div {
+  text-align: center;
+}
+
 .about-section > .section-header > div,
 .certification-section > .section-header > div {
   width: 100%;
