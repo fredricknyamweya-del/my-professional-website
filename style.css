@@ -972,7 +972,6 @@ body.intro-splash-open {
 
 .intro-splash-name {
   overflow: hidden;
-  color: var(--text);
   font-family: var(--font-display);
   font-size: clamp(2.625rem, 11vw, 5.75rem);
   font-weight: 700;
@@ -981,16 +980,20 @@ body.intro-splash-open {
   white-space: nowrap;
 }
 
+.intro-splash-first-name {
+  color: var(--text);
+}
+
+.intro-splash-last-name {
+  color: var(--accent);
+}
+
 .intro-splash-letter {
   display: inline-block;
   opacity: 0;
   transform: translateY(110%);
   animation: intro-splash-rise 600ms cubic-bezier(.2, .7, .2, 1) forwards;
   animation-delay: var(--letter-delay);
-}
-
-.intro-splash-space {
-  width: 0.5em;
 }
 
 .intro-splash-dot {

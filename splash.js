@@ -2,21 +2,21 @@ const introSplash = document.getElementById('introSplash');
 
 if (introSplash && !document.documentElement.classList.contains('intro-splash-seen')) {
   const splashName = document.getElementById('introSplashName');
-  const nameText = splashName.firstChild.textContent;
-  const letterFragment = document.createDocumentFragment();
+  let letterIndex = 0;
 
-  Array.from(nameText).forEach((character, index) => {
-    const letter = document.createElement('span');
-    letter.className = 'intro-splash-letter';
-    if (character === ' ') {
-      letter.classList.add('intro-splash-space');
-    }
-    letter.style.setProperty('--letter-delay', `${index * 60}ms`);
-    letter.textContent = character;
-    letterFragment.append(letter);
+  splashName.querySelectorAll('.intro-splash-word').forEach(word => {
+    const letterFragment = document.createDocumentFragment();
+    Array.from(word.textContent).forEach(character => {
+      const letter = document.createElement('span');
+      letter.className = 'intro-splash-letter';
+      letter.style.setProperty('--letter-delay', `${letterIndex * 60}ms`);
+      letter.textContent = character;
+      letterFragment.append(letter);
+      letterIndex += 1;
+    });
+    word.replaceChildren(letterFragment);
   });
 
-  splashName.replaceChild(letterFragment, splashName.firstChild);
   document.body.classList.add('intro-splash-open');
 
   try {
