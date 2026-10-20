@@ -179,6 +179,14 @@ h3 {
   font-weight: 600;
 }
 
+.intro-splash-pending .tagline {
+  opacity: 0;
+}
+
+.intro-splash-complete .tagline {
+  animation: intro-splash-fade 800ms ease-out both;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -1024,6 +1032,50 @@ body.intro-splash-open {
   transform: translateY(-100%);
 }
 
+.rise-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.rise-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(110%);
+}
+
+.rise-text-active .rise-letter {
+  animation: rise-text-letter 600ms cubic-bezier(.2, .8, .2, 1) forwards;
+  animation-delay: var(--rise-delay);
+}
+
+@keyframes rise-text-letter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.not-found-page {
+  display: grid;
+  min-height: calc(100vh - 4rem);
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.not-found-content {
+  width: min(100%, 42rem);
+}
+
+.not-found-content h1 {
+  overflow-wrap: anywhere;
+}
+
+.not-found-content p {
+  color: var(--muted);
+}
+
 @keyframes intro-splash-rise {
   to {
     opacity: 1;
@@ -1281,5 +1333,18 @@ body.intro-splash-open {
   .intro-splash.is-exiting {
     transform: none;
     opacity: 0;
+  }
+
+  .rise-letter {
+    transform: none;
+  }
+
+  .rise-text-active .rise-letter {
+    animation: intro-splash-fade 200ms ease-out both !important;
+    animation-delay: 0ms !important;
+  }
+
+  .intro-splash-complete .tagline {
+    animation-duration: 200ms !important;
   }
 }

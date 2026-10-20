@@ -14,9 +14,11 @@
     try {
       if (sessionStorage.getItem('introSplashSeen') === 'true') {
         document.documentElement.classList.add('intro-splash-seen');
+      } else {
+        document.documentElement.classList.add('intro-splash-pending');
       }
     } catch {
-      // The splash remains available for this page view when storage is unavailable.
+      document.documentElement.classList.add('intro-splash-pending');
     }
   </script>
   <link rel="icon" type="icon" href="assets/portfolio webpageicon.png">
@@ -36,7 +38,7 @@
   <header class="site-header" id="siteHeader">
     <div class="brand">
       <a href="#home" class="logo">Fredrick <span>Nyamweya</span></a>
-      <p class="tagline">Junior Full-Stack Developer</p>
+      <p class="tagline">Junior Full-Stack Software Engineer</p>
     </div>
 
     <div class="header-actions">
@@ -116,7 +118,7 @@
       <div class="section-header">
         <div>
           <p class="section-eyebrow">// About</p>
-          <h2 class="reveal">About Me</h2>
+          <rise-text as="h2" class="reveal" text="About Me"></rise-text>
           
         <p>I'm a developer who believes great software solves real problems-not just technically, but by making people's workflows smoother and their days easier. <br>Coming from a background where I've worn many hats, I bring a practical mindset to coding: every feature should earn its place, every interaction should feel intentional.<br>I'm most energized when collaborating with teams, learning emerging technologies, and shipping products that genuinely impact users.<br>Whether debugging a tricky API call or refining a component's UX, I approach each challenge as a chance to strengthen both my craft and the product.</p>
         <div class="about-details">
@@ -155,7 +157,7 @@
     <section class="section portfolio-section" id="portfolio">
       <div class="section-header reveal reveal--scale">
         <p class="section-eyebrow">// Projects</p>
-        <h2 class="reveal">Portfolio</h2>
+        <rise-text as="h2" class="reveal" text="Portfolio"></rise-text>
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Group project</p>
@@ -296,7 +298,7 @@
         <div class="contact-intro reveal">
           <p class="section-eyebrow">// Contact</p>
           <p class="eyebrow">Let's Connect</p>
-          <h2 class="reveal">Ready to build something memorable?</h2>
+          <rise-text as="h2" class="reveal" text="Ready to build something memorable?"></rise-text>
           <p>Share a few details about your idea and I'll get back to you with a thoughtful response.</p>
         </div>
         <div class="forms-panel reveal">
@@ -376,6 +378,7 @@
     </div>
   </footer>
 
+  <script src="components/rise-text.js"></script>
   <script src="splash.js"></script>
   <script src="script.js"></script>
 </body>

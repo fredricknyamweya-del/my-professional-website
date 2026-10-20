@@ -34,6 +34,9 @@ if (introSplash && !document.documentElement.classList.contains('intro-splash-se
     window.setTimeout(() => {
       introSplash.remove();
       document.body.classList.remove('intro-splash-open');
+      document.documentElement.classList.remove('intro-splash-pending');
+      document.documentElement.classList.add('intro-splash-complete');
+      document.dispatchEvent(new CustomEvent('intro-splash:complete'));
     }, exitDuration);
   }, exitDelay);
 }

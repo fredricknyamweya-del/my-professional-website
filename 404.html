@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Fredrick Nyamweya</title>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('siteTheme') === 'dark' ? 'dark' : 'light';
+    } catch {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="not-found-page">
+    <div class="not-found-content">
+      <rise-text as="h1" text="Page not found"></rise-text>
+      <p>The page you’re looking for doesn’t exist or may have moved.</p>
+      <a class="button primary" href="/">Back to home</a>
+    </div>
+  </main>
+  <script src="components/rise-text.js"></script>
+</body>
+</html>
