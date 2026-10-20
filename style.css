@@ -974,7 +974,7 @@ body.intro-splash-open {
   overflow: hidden;
   color: var(--text);
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 12vw, 6rem);
+  font-size: clamp(2.625rem, 11vw, 5.75rem);
   font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 1.2;
