@@ -11,6 +11,13 @@
     } catch {
       document.documentElement.dataset.theme = 'light';
     }
+    try {
+      if (sessionStorage.getItem('introSplashSeen') === 'true') {
+        document.documentElement.classList.add('intro-splash-seen');
+      }
+    } catch {
+      // The splash remains available for this page view when storage is unavailable.
+    }
   </script>
   <link rel="icon" type="icon" href="assets/portfolio webpageicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +26,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="intro-splash" id="introSplash" aria-hidden="true">
+    <div class="intro-splash-content">
+      <div class="intro-splash-name" id="introSplashName">Fredrick Nyamweya<span class="intro-splash-dot"></span></div>
+      <p class="intro-splash-title">Junior Full-Stack Software Engineer</p>
+    </div>
+  </div>
   <div class="page-layer" aria-hidden="true"></div>
   <header class="site-header" id="siteHeader">
     <div class="brand">
@@ -363,6 +376,7 @@
     </div>
   </footer>
 
+  <script src="splash.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
