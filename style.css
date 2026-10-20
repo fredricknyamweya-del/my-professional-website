@@ -989,6 +989,10 @@ body.intro-splash-open {
   animation-delay: var(--letter-delay);
 }
 
+.intro-splash-space {
+  width: 0.5em;
+}
+
 .intro-splash-dot {
   display: inline-block;
   width: 0.14em;

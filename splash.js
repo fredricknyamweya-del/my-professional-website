@@ -8,6 +8,9 @@ if (introSplash && !document.documentElement.classList.contains('intro-splash-se
   Array.from(nameText).forEach((character, index) => {
     const letter = document.createElement('span');
     letter.className = 'intro-splash-letter';
+    if (character === ' ') {
+      letter.classList.add('intro-splash-space');
+    }
     letter.style.setProperty('--letter-delay', `${index * 60}ms`);
     letter.textContent = character;
     letterFragment.append(letter);
@@ -23,7 +26,7 @@ if (introSplash && !document.documentElement.classList.contains('intro-splash-se
   }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const exitDelay = reducedMotion ? 700 : 1900;
+  const exitDelay = reducedMotion ? 700 : 2800;
   const exitDuration = reducedMotion ? 250 : 800;
 
   window.setTimeout(() => {
