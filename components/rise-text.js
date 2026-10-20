@@ -35,12 +35,8 @@ class RiseText extends HTMLElement {
 
     this.replaceWith(heading);
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      new IntersectionObserver(entries => {
-        if (!entries.some(entry => entry.isIntersecting)) return;
-        heading.classList.add('rise-text-active');
-        observer.disconnect();
-      }, { threshold: 0.4 }).observe(heading);
+    if (!('IntersectionObserver' in window)) {
+      heading.classList.add('rise-text-active');
       return;
     }
 
