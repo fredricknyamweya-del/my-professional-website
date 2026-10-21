@@ -11,15 +11,7 @@
     } catch {
       document.documentElement.dataset.theme = 'light';
     }
-    try {
-      if (sessionStorage.getItem('introSplashSeen') === 'true') {
-        document.documentElement.classList.add('intro-splash-seen');
-      } else {
-        document.documentElement.classList.add('intro-splash-pending');
-      }
-    } catch {
-      document.documentElement.classList.add('intro-splash-pending');
-    }
+    document.documentElement.classList.add('intro-splash-pending');
   </script>
   <link rel="icon" type="icon" href="assets/portfolio webpageicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">

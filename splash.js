@@ -1,6 +1,6 @@
 const introSplash = document.getElementById('introSplash');
 
-if (introSplash && !document.documentElement.classList.contains('intro-splash-seen')) {
+if (introSplash) {
   const splashName = document.getElementById('introSplashName');
   let letterIndex = 0;
 
@@ -18,12 +18,6 @@ if (introSplash && !document.documentElement.classList.contains('intro-splash-se
   });
 
   document.body.classList.add('intro-splash-open');
-
-  try {
-    sessionStorage.setItem('introSplashSeen', 'true');
-  } catch {
-    // The splash still runs for this page view when storage is unavailable.
-  }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const exitDelay = reducedMotion ? 700 : 2800;

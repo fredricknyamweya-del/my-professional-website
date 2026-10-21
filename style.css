@@ -964,10 +964,6 @@ body.nav-menu-open {
   transition: transform 800ms cubic-bezier(.7, 0, .2, 1);
 }
 
-.intro-splash-seen .intro-splash {
-  display: none;
-}
-
 body.intro-splash-open {
   overflow: hidden;
 }
