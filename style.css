@@ -890,7 +890,8 @@ form label {
   mix-blend-mode: multiply;
 }
 
-.fleetpesa-logo-dark {
+.fleetpesa-logo-dark,
+.kenchi-logo-dark {
   display: none !important;
 }
 
@@ -898,11 +899,13 @@ form label {
   mix-blend-mode: normal;
 }
 
-:root[data-theme="dark"] .fleetpesa-logo-light {
+:root[data-theme="dark"] .fleetpesa-logo-light,
+:root[data-theme="dark"] .kenchi-logo-light {
   display: none !important;
 }
 
-:root[data-theme="dark"] .fleetpesa-logo-dark {
+:root[data-theme="dark"] .fleetpesa-logo-dark,
+:root[data-theme="dark"] .kenchi-logo-dark {
   display: block !important;
 }
 
