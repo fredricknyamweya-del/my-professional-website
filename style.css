@@ -812,6 +812,74 @@ form label {
   text-align: center;
 }
 
+.trustline-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  background-color: var(--bg);
+}
+
+.trustline-heading {
+  margin-bottom: 1.75rem;
+  text-align: center;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  letter-spacing: 0.12em;
+}
+
+.trustline-heading::after {
+  display: block;
+  width: 3.25rem;
+  height: 3px;
+  margin: 0.8rem auto 0;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.trustline-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trustline-track {
+  display: flex;
+  width: max-content;
+  background-color: var(--bg);
+  animation: trustline-scroll 34s linear infinite;
+}
+
+.trustline-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin: 0;
+  padding: 0 clamp(2rem, 4vw, 3.5rem) 0 0;
+  list-style: none;
+}
+
+.trustline-logo-group li {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.trustline-logo-group img {
+  display: block;
+  width: auto;
+  height: clamp(2.8rem, 5vw, 4rem);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.trustline-carousel:hover .trustline-track {
+  animation-play-state: paused;
+}
+
+@keyframes trustline-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .certificate-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1218,6 +1286,11 @@ body.intro-splash-open {
   .certificate-image img {
     max-height: 360px;
   }
+
+  .trustline-logo-group {
+    gap: clamp(1.75rem, 5vw, 2.5rem);
+    padding-right: clamp(1.75rem, 5vw, 2.5rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1274,6 +1347,14 @@ body.intro-splash-open {
   .language-track-group {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .trustline-heading {
+    font-size: 1rem;
+  }
+
+  .trustline-logo-group img {
+    height: clamp(2.5rem, 11vw, 3rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1299,6 +1380,23 @@ body.intro-splash-open {
     translate: none;
     scale: 1;
     transition: none;
+  }
+
+  .trustline-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .trustline-logo-group:first-child {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    padding-right: 0;
+  }
+
+  .trustline-logo-group[aria-hidden="true"] {
+    display: none;
   }
 
   .intro-splash {
