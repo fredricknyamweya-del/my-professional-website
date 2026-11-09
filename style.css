@@ -419,6 +419,18 @@ h3 {
   color: var(--text);
 }
 
+.button.linkedin-button {
+  border-color: #0a66c2;
+  background: #0a66c2;
+  color: #ffffff;
+}
+
+.button.linkedin-button:hover {
+  border-color: #004182;
+  background: #004182;
+  color: #ffffff;
+}
+
 .button.ghost:hover,
 .button.secondary:hover {
   border-color: var(--accent);
