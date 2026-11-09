@@ -710,13 +710,15 @@ h3 {
 }
 
 .language-track-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.65rem;
 }
 
 .language-card {
   display: flex;
+  flex: 0 1 115px;
   min-height: 86px;
   align-items: center;
   justify-content: center;
@@ -1407,10 +1409,6 @@ body.intro-splash-open {
 
   .tagline {
     font-size: 0.68rem;
-  }
-
-  .language-track-group {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 115px), 1fr));
   }
 
   .trustline-heading {
