@@ -890,8 +890,20 @@ form label {
   mix-blend-mode: multiply;
 }
 
+.fleetpesa-logo-dark {
+  display: none !important;
+}
+
 :root[data-theme="dark"] .trustline-logo-group img {
   mix-blend-mode: normal;
+}
+
+:root[data-theme="dark"] .fleetpesa-logo-light {
+  display: none !important;
+}
+
+:root[data-theme="dark"] .fleetpesa-logo-dark {
+  display: block !important;
 }
 
 .trustline-carousel:hover .trustline-track {

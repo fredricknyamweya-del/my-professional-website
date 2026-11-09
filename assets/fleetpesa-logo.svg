@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="86" viewBox="0 0 270 86" role="img" aria-labelledby="title">
+  <title id="title">FleetPesa</title>
+  <rect x="2" y="11" width="62" height="62" rx="12" fill="#16ad83"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+    <path d="M14 31h30l8 9v14H14z"/>
+    <path d="M44 31v10h8M18 37h21m-25 9h40"/>
+    <path d="M20 50h6m17 0h6"/>
+  </g>
+  <circle cx="23" cy="55" r="4" fill="#fff"/>
+  <circle cx="45" cy="55" r="4" fill="#fff"/>
+  <text x="77" y="56" fill="#19233c" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" letter-spacing="-1.2">Fleet</text>
+  <text x="157" y="56" fill="#20ae82" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" letter-spacing="-1.2">Pesa</text>
+</svg>
