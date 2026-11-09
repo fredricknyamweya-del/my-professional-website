@@ -406,16 +406,14 @@ h3 {
 }
 
 .button.ghost,
-.button.secondary,
-.project-repo-placeholder {
+.button.secondary {
   border-color: var(--border-strong);
   background: var(--surface);
   color: var(--text);
 }
 
 .button.ghost:hover,
-.button.secondary:hover,
-.project-repo-placeholder:hover {
+.button.secondary:hover {
   border-color: var(--accent);
   background: var(--surface-subtle);
   color: var(--accent);
