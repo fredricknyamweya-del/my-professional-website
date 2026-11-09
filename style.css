@@ -597,9 +597,9 @@ h3 {
 
 .portfolio-section {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
   align-items: start;
-  gap: 1rem;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
 }
 
 .portfolio-section > .section-header:first-child {
@@ -611,19 +611,29 @@ h3 {
   margin-bottom: 0;
 }
 
-.portfolio-section > .section-header:not(:first-child) {
+.portfolio-section > .project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   height: 100%;
   margin: 0;
   padding: clamp(1rem, 2.5vw, 1.5rem);
+  overflow: hidden;
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .portfolio-section > .project-featured {
   grid-column: 1 / -1;
+  border-top: 3px solid var(--accent);
+  background: linear-gradient(135deg, var(--surface), var(--surface-subtle));
 }
 
-.portfolio-section > .section-header:not(:first-child):hover {
+.portfolio-section > .project-card:not(.project-featured) {
+  border-top: 2px solid var(--border-strong);
+}
+
+.portfolio-section > .project-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
 }
@@ -667,6 +677,11 @@ h3 {
   margin: 0.9rem 0.4rem 0 0;
   padding: 0.45rem 0.8rem;
   font-size: 0.82rem;
+}
+
+.project-card:not(.project-featured) > .project-link:first-of-type {
+  margin-top: auto;
+  padding-top: 0.9rem;
 }
 
 .project-repo-placeholder {
@@ -1388,7 +1403,7 @@ body.intro-splash-open {
   }
 
   .language-track-group {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 115px), 1fr));
   }
 
   .trustline-heading {
