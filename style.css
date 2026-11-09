@@ -663,7 +663,10 @@ h3 {
 }
 
 .project-link {
+  min-height: 38px;
   margin: 0.9rem 0.4rem 0 0;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.82rem;
 }
 
 .project-repo-placeholder {

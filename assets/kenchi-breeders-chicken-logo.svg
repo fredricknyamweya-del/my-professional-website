@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="215" height="98" viewBox="0 0 215 98" role="img" aria-labelledby="title">
+  <title id="title">Kenchi-Breeders chicken farm</title>
+  <g aria-hidden="true">
+    <path d="M77 55h62" fill="none" stroke="#4b8b2a" stroke-linecap="round" stroke-width="2"/>
+    <path d="M88 51c-7-2-11-8-10-15 5 1 9 3 12 7 4-9 12-14 22-14 13 0 22 8 22 19 0 9-8 15-21 15H97c-7 0-12-5-12-10 0-1 1-2 3-2z" fill="#4b8b2a"/>
+    <path d="M108 34c2-9 8-15 16-15 8 0 13 5 13 12 0 5-4 9-10 10l-7 1z" fill="#4b8b2a"/>
+    <path d="M120 19c0-5 3-8 6-9 1 4 0 6-1 8 3-3 7-3 10-1-2 4-5 6-9 6z" fill="#4b8b2a"/>
+    <path d="m136 27 9 4-9 4z" fill="#e2a72e"/>
+    <circle cx="130" cy="24" r="1.5" fill="#fff"/>
+    <circle cx="130" cy="24" r=".7" fill="#24351d"/>
+    <path d="M98 41c7-6 16-4 19 2-5 5-12 7-19 5z" fill="#75a94d"/>
+    <path d="M98 62v6m14-6v6m-8 0h-6m14 0h-6" fill="none" stroke="#4b8b2a" stroke-linecap="round" stroke-width="2"/>
+    <path d="M74 54c4-5 8-5 11 0m47 0c4-5 8-5 11 0" fill="none" stroke="#75a94d" stroke-linecap="round" stroke-width="2"/>
+  </g>
+  <text x="107.5" y="89" fill="#326b20" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Kenchi-Breeders</text>
+</svg>
