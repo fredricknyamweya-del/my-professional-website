@@ -621,6 +621,10 @@ h3 {
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
+.portfolio-section > .project-featured {
+  grid-column: 1 / -1;
+}
+
 .portfolio-section > .section-header:not(:first-child):hover {
   transform: translateY(-2px);
   border-color: var(--accent);
@@ -643,6 +647,21 @@ h3 {
 
 .project-tags {
   margin-top: 0.7rem;
+}
+
+.project-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project-feature-list li {
+  padding: 0.4rem 0 0.4rem 0.8rem;
+  border-left: 2px solid var(--border);
+  color: var(--muted);
 }
 
 .project-link {
@@ -868,6 +887,10 @@ form label {
   height: clamp(2.8rem, 5vw, 4rem);
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+:root[data-theme="dark"] .trustline-logo-group img {
+  mix-blend-mode: normal;
 }
 
 .trustline-carousel:hover .trustline-track {
@@ -1203,6 +1226,10 @@ body.intro-splash-open {
 }
 
 @media (max-width: 768px) {
+  .project-feature-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .site-header {
     display: flex;
     flex-wrap: wrap;

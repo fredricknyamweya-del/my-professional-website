@@ -151,9 +151,34 @@
         <p class="section-eyebrow">// Projects</p>
         <rise-text as="h2" class="reveal" text="Portfolio"></rise-text>
       </div>
+      <div class="section-header project-featured reveal reveal--scale">
+        <p class="project-status">Internal business software · Gosrani Wholesalers Ltd</p>
+        <p><strong>1. Gosrani Inventory Tracker</strong><br>A web-based inventory system built for Gosrani Wholesalers Limited in Eldoret, Kenya, replacing a manual stock spreadsheet with a controlled, auditable record of every stock movement. Its AI assistant lets managers ask plain-language questions such as “What went out yesterday?” and get answers from live data.</p>
+        <ul class="project-feature-list">
+          <li>Records dated stock movements by category, approved catalogue item, size, quantity in or out, and details—helping prevent typos and duplicate product names.</li>
+          <li>Shows a review screen before saving and flags unusual entries, including very large quantities and stock going negative.</li>
+          <li>Provides staff and admin roles: staff can add entries, and saved entries are locked; only admins can edit or delete entries, manage the catalogue and users, or use the AI assistant.</li>
+          <li>Lets staff request missing products for admins to approve or reject.</li>
+          <li>Supports stock counted as bales and loose pieces, plus kilograms for raw materials.</li>
+          <li>Keeps a full audit trail showing who changed what and when.</li>
+          <li>Answers plain-language inventory questions from live data through an AI assistant restricted to read-only queries.</li>
+          <li>Includes light and dark modes in the company’s red-and-black branding.</li>
+        </ul>
+        <p>Built with a React frontend, Flask (Python) REST API, and PostgreSQL. Security and reliability features include JWT authentication in HttpOnly cookies with CSRF protection, token revocation, login lockout, HTTP caching with ETags, and an automated test suite. Designed to scale from one location to several.</p>
+        <p><strong>Role:</strong> Designed and built the full stack, from the database schema to the user interface.</p>
+        <div class="project-tags" aria-label="Technologies used">
+          <span>React</span>
+          <span>Flask</span>
+          <span>Python</span>
+          <span>PostgreSQL</span>
+          <span>JWT</span>
+          <span>AI assistant</span>
+          <span>Automated testing</span>
+        </div>
+      </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Group project</p>
-        <p>1. <strong>FleetPesa</strong><br>Fleet remittance and vehicle management platform for owners of 10–15 boda bodas and matatus, with an owner dashboard, driver remittance entry, maintenance alerts, and shortfall tracking. My role in the seven-person group project was QA and project lead (git workflow, code review, and endpoint testing), and I contributed the login/registration revamp and shortfall detail workflow.</p>
+        <p>2. <strong>FleetPesa</strong><br>Fleet remittance and vehicle management platform for owners of 10–15 boda bodas and matatus, with an owner dashboard, driver remittance entry, maintenance alerts, and shortfall tracking. My role in the seven-person group project was QA and project lead (git workflow, code review, and endpoint testing), and I contributed the login/registration revamp and shortfall detail workflow.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>React</span>
           <span>Vite</span>
@@ -165,7 +190,7 @@
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Client project</p>
-        <p>2. <strong>Kenchi-Breeders website</strong><br>Catalogue site for a kienyeji chicken business in Kitale, with two catalogues, egg trays, pickup locations, and a WhatsApp chat button. Built from a Figma design.</p>
+        <p>3. <strong>Kenchi-Breeders website</strong><br>Catalogue site for a kienyeji chicken business in Kitale, with two catalogues, egg trays, pickup locations, and a WhatsApp chat button. Built from a Figma design.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Next.js (JavaScript)</span>
           <span>Flask</span>
@@ -176,17 +201,17 @@
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Command-line project</p>
-        <p>3. <strong>TaskMate CLI – Project Management Tool</strong><br>Built a Python-based command-line project management app that helps users manage projects, tasks, and assignments with JSON persistence and clear object-oriented structure.</p>
+        <p>4. <strong>TaskMate CLI – Project Management Tool</strong><br>Built a Python-based command-line project management app that helps users manage projects, tasks, and assignments with JSON persistence and clear object-oriented structure.</p>
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the TaskMate CLI GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">API project</p>
-        <p>4. <strong>Inventory Management API with SQLite Integration</strong><br>Developed a Flask-based REST API for inventory management with CRUD endpoints, external barcode lookup via OpenFoodFacts, and persistent SQLite storage for reliable data handling.</p>
+        <p>5. <strong>Inventory Management API with SQLite Integration</strong><br>Developed a Flask-based REST API for inventory management with CRUD endpoints, external barcode lookup via OpenFoodFacts, and persistent SQLite storage for reliable data handling.</p>
         <a class="project-link project-repo-placeholder" href="REPLACE_WITH_GITHUB_REPOSITORY_URL" aria-label="Replace with the Inventory Management API GitHub repository URL">View project on GitHub ↗</a>
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Summative lab</p>
-        <p>5. <strong>Expense Tracker API</strong><br>JWT-authenticated REST API with signup, login, and full expense CRUD with pagination. Users can access only their own data.</p>
+        <p>6. <strong>Expense Tracker API</strong><br>JWT-authenticated REST API with signup, login, and full expense CRUD with pagination. Users can access only their own data.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Flask</span>
           <span>SQLAlchemy</span>
@@ -198,7 +223,7 @@
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Summative lab</p>
-        <p>6. <strong>Workout Tracker API</strong><br>REST API for tracking workouts. Built with Flask, SQLAlchemy, and Marshmallow.</p>
+        <p>7. <strong>Workout Tracker API</strong><br>REST API for tracking workouts. Built with Flask, SQLAlchemy, and Marshmallow.</p>
         <div class="project-tags" aria-label="Technologies used">
           <span>Flask</span>
           <span>SQLAlchemy</span>
@@ -208,7 +233,7 @@
       </div>
       <div class="section-header reveal reveal--scale">
         <p class="project-status">Group project</p>
-        <p>7. <strong>Logistics Shipment Tracking Schema</strong><br>Group project redesigning an 11-table relational schema including Payments, Shipments, Packages, and a many-to-many join table. My contribution was proposing the Payments table and working out the Shipment-to-Package relationship.</p>
+        <p>8. <strong>Logistics Shipment Tracking Schema</strong><br>Group project redesigning an 11-table relational schema including Payments, Shipments, Packages, and a many-to-many join table. My contribution was proposing the Payments table and working out the Shipment-to-Package relationship.</p>
         <div class="project-tags" aria-label="Technologies and methods used">
           <span>Relational Database Design</span>
           <span>ERD / Schema Modeling</span>
@@ -274,7 +299,15 @@
         <div>
           <p class="section-eyebrow">// Experience</p>
           <h2 class="reveal">Professional Journey</h2>
-          <h3 class="timeline-role reveal reveal--left">1. Junior Front-End Developer (Freelance)</h3>
+          <h3 class="timeline-role reveal reveal--left">Junior Software Developer &amp; Digital Operations Officer</h3>
+          <p class="timeline-period reveal reveal--right">Gosrani Ltd · Full-time · Oct 2026 - Present · 2 mos<br>Eldoret, Uasin Gishu County, Kenya · On-site</p>
+          <p class="timeline-detail reveal reveal--left"><strong>Website Maintenance</strong> → Maintain and update the company website to support functionality, usability, and a positive customer experience.</p>
+          <p class="timeline-detail reveal reveal--right"><strong>POS System Support</strong> → Oversee maintenance of the frontend Point of Sale (POS) system to support smooth business operations and user experience.</p>
+          <p class="timeline-detail reveal reveal--left"><strong>Social Media Management</strong> → Manage the company’s social media presence, develop engaging content, and support audience growth and customer engagement.</p>
+          <p class="timeline-detail reveal reveal--right"><strong>Digital Marketing Campaigns</strong> → Plan and execute online marketing campaigns to improve brand visibility, promote products and services, and reach target audiences.</p>
+          <p class="timeline-detail reveal reveal--left"><strong>Digital Business Support</strong> → Contribute to the effective use of digital platforms to support operational efficiency, customer engagement, and business growth.</p>
+          <p class="timeline-skills reveal reveal--right">Sustainable digital transformation</p>
+          <h3 class="timeline-role reveal reveal--left">2. Junior Front-End Developer (Freelance)</h3>
           <p class="timeline-period reveal reveal--right">Jan 2026 - Present</p>
           <p class="timeline-detail reveal reveal--left"> -Responsive UI/UX Design → Crafted modern, mobile-friendly interfaces tailored for a school website.</p>
           <p class="timeline-detail reveal reveal--right"> -Student Portal Integration → Implemented front-end components seamlessly connected to backend systems for student access and management.</p>
@@ -347,8 +380,8 @@
     </section>
 
     <section class="section trustline-section" aria-labelledby="trustline-heading">
-      <h2 class="trustline-heading" id="trustline-heading">TRUSTED BY COMPANIES LIKE</h2>
-      <div class="trustline-carousel" aria-label="Client companies">
+      <h2 class="trustline-heading" id="trustline-heading">TRUSTED BY BRANDS LIKE</h2>
+      <div class="trustline-carousel" aria-label="Client brands">
         <div class="trustline-track">
           <ul class="trustline-logo-group">
             <li><img src="assets/gosrani-logo.jpeg" alt="Gosrani Wholesalers Ltd" width="267" height="102" loading="eager" decoding="async"></li>
